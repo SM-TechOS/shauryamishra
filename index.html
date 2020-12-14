@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 
 <html>
@@ -826,8 +818,7 @@ function showSlides() {
 
 <div style= "background: white;  outline: 2px dashed blue; " id="Login" class="tabcontent">
   <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+
 
 input[type=text], input[type=password] {
   width: 50%;
@@ -838,7 +829,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button9 {
+.button9 {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -848,7 +839,7 @@ button9 {
   width: 100%;
 }
 
-button9:hover {
+.button9:hover {
   opacity: 0.8;
 }
 
@@ -877,14 +868,14 @@ span.psw {
 
 </style>
 
-</head>
+
 <body>
 
 <h2>Login Form</h2>
-	
-	<form>
+
+
   <div class="imgcontainer">
-    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+    <img src="man avtar.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
@@ -897,7 +888,7 @@ span.psw {
 <br/>
 
         
-    <a href="s.html"><button class= "button">Login</button></a>
+   <a href="s.html"> <button class= "button9"  title= "Please open this link by copy and paste in address bar" >Login</button></a>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -907,7 +898,7 @@ span.psw {
     
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-</form>
+
 
 </div>
 
@@ -997,4 +988,404 @@ function myFunction() {
 	  
      <select  id="fontSize" onclick="changeSize()" title= "Change Font Size" style= "height: 30px;" >
 	    
-        <option value=
+        <option value="1">1</option>      
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+      <!-- font size end -->
+		
+	<a href="javascript:void(0)" class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"><button class= "btn3"><i class="fa fa-list-ol" aria-hidden="true"></i></button></a>
+    <a href="javascript:void(0)" class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"><button class= "btn3"><i class="fa fa-list-ul" aria-hidden="true"></i> </button></a>   
+	<input  class="color-apply" type="color" onchange="chooseColor()" id="myColor" style= "height:30px;width:30px;" value= "text color" title= "Change Text Color"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+<script>
+document.getElementById("defaultOpen").click();
+</script>
+
+
+<p>
+<input type="file" accept="image/*"  onchange="loadFile(event)" style= "width: 100px;">
+
+<img width= "80"  id="output"/>
+
+
+</p>
+
+
+
+  
+
+
+<a href="javascript:void(0)"   id="show"><button  class= "btn3"><i class="fas fa-upload"></i> Choose Media</button></a>
+<a href="javascript:void(0)"   id="hide"><button id= "defaultOpen" class= "btn3"><i class="fa fa-times" aria-hidden="true"></i> </button></a>
+
+
+<script>
+  var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>
+        
+</div>
+<br>
+
+<div class="editor" id="sampleeditor" >
+	</div>
+	
+
+	<script>
+		window.addEventListener('load', function(){
+			document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
+			document.getElementById('sampleeditor2').setAttribute('contenteditable', 'true');
+        });
+
+		function format(command, value) {
+			document.execCommand(command, false, value);
+		}
+
+		function setUrl() {
+			var url = document.getElementById('txtFormatUrl').value;
+			var sText = document.getSelection();
+			document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + sText + '</a>');
+			document.getElementById('txtFormatUrl').value = '';
+		}
+	</script>
+	<script>
+	$('.yourClass').tooltip({show: {effect:"none", delay:0}});
+	</script>
+	
+	<script>
+function chooseColor(){
+      var mycolor = document.getElementById("myColor").value;
+      document.execCommand('foreColor', false, mycolor);
+    }
+
+    function changeFont(){
+      var myFont = document.getElementById("input-font").value;
+      document.execCommand('fontName', false, myFont);
+    }
+
+    function changeSize(){
+      var mysize = document.getElementById("fontSize").value;
+      document.execCommand('fontSize', false, mysize);
+    }
+
+    function checkDiv(){
+      var editorText = document.getElementById("editor1").innerHTML;
+      if(editorText === ''){
+        document.getElementById("editor1").style.border = '5px solid red';
+      }
+    }
+
+    function removeBorder(){
+      document.getElementById("editor1").style.border = '1px solid transparent';
+    }
+    </script>
+	<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+	
+	</div>
+	<div style= "background: white;  outline: 2px dotted blue; " id="Contact" class="tabcontent">
+	<h1 align= "center" style="color: black; font-family: garamond;"> Contact </h1>
+	<br>
+	<style>
+	* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="row">
+
+    <div class="column" style="background-color:#aaa;">
+         <div class="chip">
+            <img src="man avtar.png" alt="Person" width="96" height="96">
+               <font color= "black">Shaurya Mishra
+  
+         </div>
+		 <br/>
+		 <br/>
+		 
+		     <font size= "4" color="black">
+		        <b> Phone Number: </b> 8920558500<br/>
+		        <b> Email       : </b> supermastergaming@gmail.com<br/>
+				<b> Age         : </b> 12<br/>
+		        <b> Country     : </b> India<br/>
+		        <b> Hobby       : </b> Playing cricket and writting<br/>
+		     </font><br/><br/>
+			 <font align= "center" size= "5" color= "white">
+			    <b> Creater of this Website</b>
+			 </font>	
+    </div>
+	
+	<div class="column" style="background-color:#bbb;">
+	<div class="chip">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Person" width="96" height="96">
+               <font color= "black">Alok Mishra
+  
+         </div>
+		 <br/>
+		 <br/>
+		 
+		     <font size= "4" color="black">
+		        <b> Phone Number: </b> 8920558500<br/>
+		        <b> Email       : </b> alok.7016@kvsrodelhi.in<br/>
+				<b> Age         : </b> 9<br/>
+		        <b> Country     : </b> India<br/>
+		        <b> Hobby       : </b> Reading books and running<br/>
+		     </font><br/><br/>
+			 <font align= "center" size= "5" color= "white">
+			    <b> Cheif editor of this <br> Website</b>
+			 </font>	
+    </div>
+	
+</div>
+
+
+
+
+
+
+
+</div>
+<div style= "background: white;  outline: 2px dotted blue; " id="Lucky Wheel" class="tabcontent">
+
+<style>
+
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button3{
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  
+  
+  width: 100%;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: relative;
+  boottom: 0;
+  
+  border: 3px solid #f1f1f1;
+  z-index: 1;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 100%;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: lightblue;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn3 {
+  background-color: blue;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: blue;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn3:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+
+
+<p>Free Iphone or Samsung phone, Here!</p>
+
+<button class="open-button3" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="https://forms.gle/fS41vbHNZEXb8Deh8" class="form-container">
+    <h1>Fill Details</h1>
+
+    <label for="email"><b>Phone number</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="Phone Number" required>
+
+    <label for="Address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Your Address" name="Address" required>
+	
+	<label><b>Your Name</b></label>
+    <input type="text" placeholder="Enter Your Name" name="First Name" required>
+	
+	<label title= "Only enter your first or last spinned price otherwiise you will be not get Prize"><b>Select Your Lucky Prize</b></label>
+	<select>
+	<option> Samsung Galaxy A50</option>
+	<option> I-Phone 11 Pro Max</option>
+	</select>
+	<br/>
+	<br/>
+
+    <button type="submit" class="btn3">Proceed</button>
+    <button type="button" class="btn3 cancel" onclick="closeForm()">Cancel</button>
+	
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+
+</div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+   <script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<style>
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+  outline: 2px dotted blue;
+  
+}
+
+</style>
+
+<footer>
+<marquee onmouseover= "stop();" onmouseout= "start();" scrollamount="6" direction= "left" readonly>
+   <i class= "fa fa-copyright"></i> Copyright SM Technology 2020<font ><b>. Last Updated on 9/12/2020</b></font></marquee>
+</footer>
+
+</div>
+
+
+
+
+
+</body>
+</html>
